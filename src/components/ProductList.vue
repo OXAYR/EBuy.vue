@@ -1,5 +1,5 @@
 <template>
-  <div class="mx-10 my-32">
+  <div class="mx-16 my-32">
     <h1 class="font-bold text-3xl text-left">Featured Products</h1>
     <ul v-if="items.length" class="grid grid-cols-4 gap-4 mt-4">
       <li

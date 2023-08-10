@@ -25,9 +25,9 @@
       v-model="form.confirmPassword"
       class="mt-4 p-2 border border-gray-300 rounded-md w-full"
     />
-    <p v-if="error.length > 0" class="text-red-500 text-sm">{{ error }}</p>
+    <p v-if="error.length > 0" class="text-red text-sm">{{ error }}</p>
     <button
-      class="mt-4 px-44 py-2 bg-blue-200 hover:bg-blue-400 rounded-full"
+      class="mt-4 px-44 py-2 bg-stoneBlack rounded-full"
       @click="toValidate(form)"
     >
       Register

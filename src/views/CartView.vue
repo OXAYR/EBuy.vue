@@ -1,6 +1,6 @@
 <template>
   <div class="mx-32 my-32">
-    <h1 class="font-bold text-3xl text-left">MY CART</h1>
+    <h1 class="font-bold text-3xl text-left">MY CART ({{ cart.length }})</h1>
     <ul
       v-if="cart.length"
       class="p-4 mt-4 card divide-y divide-slate-300 text-left shadow-md"
