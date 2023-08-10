@@ -4,7 +4,7 @@ import LoginView from '../views/LoginView.vue'
 import SignUpView from '../views/SignUpView.vue'
 import ProductListView from '../views/PorductListView.vue'
 import CreateProductView from '../views/CreateProductView.vue'
-import EditProduct from '../components/EditTask.vue'
+import EditProduct from '../components/EditProduct.vue'
 
 
 const routes = [

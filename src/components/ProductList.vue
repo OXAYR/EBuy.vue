@@ -74,7 +74,7 @@
 </template>
 
 <script>
-import EditProduct from "./EditTask.vue";
+// import EditProduct from "./EditProduct.vue";
 
 export default {
   name: "ProductList",
@@ -106,6 +106,6 @@ export default {
       this.$emit("status-change", index, status);
     },
   },
-  components: { EditTask },
+  // components: { EditTask },
 };
 </script>

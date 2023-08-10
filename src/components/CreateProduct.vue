@@ -1,6 +1,6 @@
 <template>
   <div class="shadow-sm mt-32 Login px-8 py-11 max-w-full">
-    <h1 class="text-center text-3xl font-medium font-serif">Enter a task</h1>
+    <h1 class="text-center text-3xl font-medium font-serif">Enter a Product</h1>
     <input
       type="text"
       placeholder="Enter title"

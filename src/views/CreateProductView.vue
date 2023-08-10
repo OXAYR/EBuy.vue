@@ -6,7 +6,7 @@ import CreateProduct from "@/components/CreateProduct.vue";
 export default {
   name: "CreateProductView",
   components: {
-    CreateTask,
+    CreateProduct,
   },
 };
 </script>

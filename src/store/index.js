@@ -2,54 +2,67 @@ import { createStore } from 'vuex'
 
 export default createStore({
   state: {
-    tasks: [],
+    products: [],
     count:0,
+    cart:[],
   },
   getters: {
-    getTasks(state) {
-      return state.tasks
+    getProducts(state) {
+      return state.products
     },
-    getFilteredTasks(state) {
-      if (state.statusFilter === "All") {
-        return state.tasks;
-      } else {
-        return state.tasks.filter(task => task.status === state.statusFilter);
-      }
+    // getFilteredProducts(state) {
+    //   if (state.statusFilter === "All") {
+    //     return state.products;
+    //   } else {
+    //     return state.products.filter(task => task.status === state.statusFilter);
+    //   }
+    // },
+    getCart(state){
+      return state.cart
     },
+    getCartLength(state){
+      return state.cart.length
+    }
     
   },
   mutations: {
-    ADD_TASK(state, task) {
+    ADD_PRODUCT(state, product) {
       const taskNew={
         ...task,
          id:++state.count}
-      state.tasks.push(taskNew)
+      state.products.push(taskNew)
     },
-    DELETE_TASK(state, index) {
-      state.tasks.splice(index, 1)
+    SET_CART(state,product){
+      state.cart.push(product)
     },
-    UPDATE_TASK(state, { index, data }) { 
+    DELETE_PRODUCT(state, index) {
+      state.products.splice(index, 1)
+    },
+    UPDATE_PRODUCT(state, { index, data }) { 
       console.log(" in mutation ", 'index---->', index, 'data----->', data);
-      state.tasks.splice(index, 1, data);
+      state.products.splice(index, 1, data);
     },
-    UPDATE_STATUS(state,{index,status}){
+    UPDATE_PRODUCT(state,{index,price}){
       console.log(" in mutation ", 'index---->', index, 'status----->', status);
-      state.tasks[index].status = status
+      state.products[index].status = status
     }
   },
   actions: {
-    createTask({ commit }, payload) {
+    createProduct({ commit }, payload) {
       // this.state.count++;
       commit('ADD_TASK', payload)
     },
-    deleteTask({ commit}, index) {
+    addToCart({commit},payload){
+      commit('SET_CART', payload)
+    },
+    deleteProduct({ commit}, index) {
       commit('DELETE_TASK', index)
     },
-    updateTask({ commit }, { id, data }) {
+    updateProduct({ commit }, { id, data }) {
       console.log("in action", 'id------>', id, '\n', 'data------>', data);
       commit('UPDATE_TASK', { index: id, data }); // Call the mutation with index and data
     },
-    updateStatus({commit}, { id, status }){
+    updatePrice({commit}, { id, status }){
       console.log("in action", 'id------>', id, '\n', 'status------>', status);
       commit('UPDATE_STATUS' ,{ index: id, status })
     },

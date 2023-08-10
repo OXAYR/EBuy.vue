@@ -1,6 +1,6 @@
 <template>
   <div class="card px-8 py-11 max-w-full flex flex-col items-center">
-    <h2 class="font-bold text-center mb-4 text-xl">Edit Task</h2>
+    <h2 class="font-bold text-center mb-4 text-xl">Edit Product</h2>
     <div class="w-full max-w-md">
       <label class="block font-semibold mb-2">Title:</label>
       <input
