@@ -1,8 +1,8 @@
 <template>
   <ProductList
-    :items="tasks"
-    @delete-task="deleteTask"
-    @status-change="updateStatusAction"
+    :items="Products"
+    @delete-task="deleteProduct"
+    @add-cart="addInCart"
   />
 </template>
 
@@ -16,16 +16,16 @@ export default {
     ProductList,
   },
   computed: {
-    ...mapGetters({ tasks: "getTasks" }),
+    ...mapGetters({ Products: "getProducts" }),
   },
   methods: {
-    ...mapActions({ deleteTaskAction: "deleteTask" }),
-    deleteTask(index) {
-      this.deleteTaskAction(index);
+    ...mapActions({ deleteProductAction: "deleteProduct" }),
+    deleteProduct(index) {
+      this.deleteProductAction(index);
     },
-    ...mapActions(["updateStatus"]),
-    updateStatusAction(index, status) {
-      this.updateStatus({ id: index, status });
+    ...mapActions(["addToCart"]),
+    addInCart(product) {
+      this.addToCart({ product });
     },
   },
 };

@@ -1,13 +1,22 @@
 <template>
   <div class="shadow-sm mt-32 Login px-8 py-11 max-w-full">
     <h1 class="text-center text-3xl font-medium font-serif">Enter a Product</h1>
-    <input
-      type="text"
-      placeholder="Enter title"
-      id="todo"
-      v-model="todo.title"
-      class="mt-4 p-2 border border-gray-300 rounded-md w-full"
-    />
+    <div class="flex flex-wrap justify-between">
+      <input
+        type="text"
+        placeholder="Enter title"
+        id="todo"
+        v-model="todo.title"
+        class="mt-4 p-2 flex border border-gray-300 rounded-md w-full"
+      />
+      <input
+        type="number"
+        placeholder="Enter price"
+        id="todo"
+        v-model="todo.price"
+        class="mt-4 p-2 flex border border-gray-300 rounded-md w-full"
+      />
+    </div>
     <p v-if="error.length" class="text-red-500 text-sm text-left">
       {{ error }}
     </p>
@@ -18,16 +27,15 @@
       class="mt-4 h-32 border border-gray-300 rounded-md w-full"
     />
     <button
-      class="mt-4 px-12 py-2 bg-blue-200 hover:bg-blue-400 rounded-full"
+      class="mt-4 px-12 py-2 bg-stoneBlack rounded-full"
       @click="validate(todo)"
     >
-      <p class="text-black font-serif text-center">Submit</p>
+      <p class="text-white font-serif text-center">Submit</p>
     </button>
   </div>
 </template>
 
 <script>
-import router from "@/router";
 import { mapActions } from "vuex";
 export default {
   name: "CreateProduct",
@@ -37,22 +45,22 @@ export default {
         // id: 0,
         title: "",
         desc: " ",
-        status: "In-Progress",
+        price: 0,
       },
       error: "",
     };
   },
 
   methods: {
-    ...mapActions({ createTask: "createTask" }),
+    ...mapActions({ createProduct: "createProduct" }),
     validate(obj) {
-      if (obj.title != "") {
+      if (obj.title != "" && obj.price > 0) {
         // obj.id++;
         console.log("from the create task-------> ", obj);
-        this.createTask(obj);
-        router.push("/productlistview");
+        this.createProduct(obj);
+        this.$router.push("/productlistview");
       } else {
-        this.error = "Enter title";
+        this.error = "Enter title or Valid Price";
       }
     },
   },

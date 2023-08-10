@@ -5,6 +5,7 @@ import SignUpView from '../views/SignUpView.vue'
 import ProductListView from '../views/PorductListView.vue'
 import CreateProductView from '../views/CreateProductView.vue'
 import EditProduct from '../components/EditProduct.vue'
+import CartView from '../views/CartView.vue'
 
 
 const routes = [
@@ -34,6 +35,10 @@ const routes = [
       {
         path: '/edit/:id',
         component: EditProduct,
+      },
+      {
+        path: '/cartView',
+        component: CartView
       }
     ]
   },

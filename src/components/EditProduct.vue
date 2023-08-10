@@ -4,24 +4,19 @@
     <div class="w-full max-w-md">
       <label class="block font-semibold mb-2">Title:</label>
       <input
-        v-model="editedTask.title"
+        v-model="editedProduct.title"
+        class="border border-gray-300 w-full px-3 py-2 mb-4"
+      />
+      <input
+        v-model="editedProduct.price"
         class="border border-gray-300 w-full px-3 py-2 mb-4"
       />
 
       <label class="block font-semibold mb-2">Description:</label>
       <textarea
-        v-model="editedTask.desc"
+        v-model="editedProduct.desc"
         class="border border-gray-300 w-full px-3 py-2 mb-4"
       ></textarea>
-
-      <label class="block font-semibold mb-2">Status:</label>
-      <select
-        v-model="editedTask.status"
-        class="border border-black w-full px-3 py-2 mb-4"
-      >
-        <option v-for="status in flag" :key="status">{{ status }}</option>
-      </select>
-      {{ tasks }}
 
       <button
         type="submit"
@@ -40,7 +35,7 @@ import { mapActions, mapGetters } from "vuex";
 export default {
   name: "EditProduct",
   props: {
-    prevTask: {
+    prevProduct: {
       type: Object,
       required: true,
     },
@@ -51,19 +46,19 @@ export default {
   },
   data() {
     return {
-      editedTask: {
+      editedProduct: {
         title: "",
         desc: "",
-        status: "",
+        price: 0,
       },
-      flag: ["In-Progress", "Pending", "Completed"],
+
       id: this.$route.params.id,
     };
   },
   methods: {
-    ...mapActions(["updateTask"]),
-    updateTaskInStore() {
-      this.updateTask({ id: this.indx, data: this.editedTask });
+    ...mapActions(["updateProduct"]),
+    updateProductInStore() {
+      this.updateProduct({ id: this.indx, data: this.editedProduct });
       router.push("/prductlistview");
     },
   },

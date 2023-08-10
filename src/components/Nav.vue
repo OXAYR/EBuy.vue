@@ -1,15 +1,23 @@
 <template>
   <div>
-    <nav class="bg-white py-5 shadow-md fixed top-0 left-0 right-0 font-serif">
-      <div class="flex">
-        <router-link to="/home"
-          ><p class="px-10 font-semibold">EBuy</p></router-link
-        >
-        <router-link to="/Cartview" class="text-blue-900"> cart </router-link>
+    <nav
+      class="bg-stoneBlack py-5 shadow-md fixed top-0 left-0 right-0 font-serif"
+    >
+      <div class="flex justify-between items-center px-10">
+        <div class="flex items-center">
+          <router-link to="/home">
+            <p class="font-semibold text-xl text-seaGreen">EBuy</p>
+          </router-link>
+          <router-link to="/productlistview" class="ml-6 text-seaGreen">
+            Products
+          </router-link>
+        </div>
+        <router-link to="/cartView" class="text-seaGreen"> Cart </router-link>
       </div>
     </nav>
   </div>
 </template>
+
 <script>
 export default {
   name: "NavBar",
