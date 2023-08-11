@@ -4,7 +4,8 @@ import LoginView from '../views/LoginView.vue'
 import SignUpView from '../views/SignUpView.vue'
 import ProductListView from '../views/PorductListView.vue'
 // // import CreateProductView from '../views/CreateProductView.vue'
-// import EditProduct from '../components/EditProduct.vue'
+import DashBoardView from '../AdminViews/DashBoardView.vue'
+import EditProduct from '../AdminComponents/EditProduct.vue'
 import AdminView from '../AdminViews/AdminView.vue'
 import CartView from '../views/CartView.vue'
 
@@ -16,7 +17,8 @@ const routes = [
     component: HomeView,
     children: [
       {
-        path: '/',
+        path: '',
+        name: ProductListView,
         component: ProductListView
       },
       {
@@ -39,20 +41,21 @@ const routes = [
     path: '/admin',
     name: 'admin',
     component: AdminView,
-    // children: [
-    //   {
-    //     path: '/adminproductlistview',
-    //     component: AdminProductListView
-    //   },
+    children: [
+      {
+        path: '',
+        name:DashBoardView,
+        component: DashBoardView,
+      },
     //   {
     //     path: '/createproductview',
     //     component: CreateProductView
     //   },
-    //   {
-    //     path: '/edit/:id',
-    //     component: EditProduct,
-    //   },
-    // ]
+      {
+        path: '/edit/:id',
+        component: EditProduct,
+      },
+    ]
   },
   
 ]
