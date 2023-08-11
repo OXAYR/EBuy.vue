@@ -8,6 +8,7 @@
         class="border border-gray-300 w-full px-3 py-2 mb-4"
       />
       <input
+        type="number"
         v-model="editedProduct.price"
         class="border border-gray-300 w-full px-3 py-2 mb-4"
       />
@@ -59,7 +60,7 @@ export default {
     ...mapActions(["updateProduct"]),
     updateProductInStore() {
       this.updateProduct({ id: this.indx, data: this.editedProduct });
-      router.push("/prductlistview");
+      router.push("/admin");
     },
   },
   computed: {

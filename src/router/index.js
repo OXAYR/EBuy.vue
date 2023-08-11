@@ -3,7 +3,7 @@ import HomeView from '../views/HomeView.vue'
 import LoginView from '../views/LoginView.vue'
 import SignUpView from '../views/SignUpView.vue'
 import ProductListView from '../views/PorductListView.vue'
-// // import CreateProductView from '../views/CreateProductView.vue'
+import AdminProductListView from '../AdminViews/AdminProductListView.vue'
 import DashBoardView from '../AdminViews/DashBoardView.vue'
 import EditProduct from '../AdminComponents/EditProduct.vue'
 import AdminView from '../AdminViews/AdminView.vue'
@@ -47,10 +47,10 @@ const routes = [
         name:DashBoardView,
         component: DashBoardView,
       },
-    //   {
-    //     path: '/createproductview',
-    //     component: CreateProductView
-    //   },
+      {
+        path: 'adminProductListView',
+        component: AdminProductListView
+      },
       {
         path: '/edit/:id',
         component: EditProduct,
