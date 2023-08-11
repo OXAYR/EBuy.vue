@@ -36,7 +36,7 @@
         <img
           src="../assets/undraw_empty_cart_co35.svg"
           alt="empty cart"
-          class="max-w-full h-auto max-h-48 mx-auto"
+          class="max-w-full h-auto max-h-48 mx-auto drop-shadow-lg"
         />
       </div>
       <p class="font-semibold mt-2">Your Cart is Empty</p>

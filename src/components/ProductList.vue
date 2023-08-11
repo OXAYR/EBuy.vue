@@ -18,12 +18,21 @@
             @click="addToCart(item)"
             class="bg-stoneBlack text-white font-medium rounded p-2"
           >
-            +
+            Add to Cart
           </button>
         </div>
       </li>
     </ul>
-    <p v-else class="mt-4 text-center text-gray-500">No products available</p>
+    <div v-else class="flex flex-col items-center justify-center text-center">
+      <div>
+        <img
+          src="../assets/undraw_no_data_re_kwbl.svg"
+          alt="empty cart"
+          class="max-w-full h-auto max-h-48 mx-auto drop-shadow-lg"
+        />
+      </div>
+      <p class="font-semibold mt-2">No Products Available</p>
+    </div>
   </div>
 </template>
 
