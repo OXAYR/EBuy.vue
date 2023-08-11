@@ -14,7 +14,8 @@ module.exports = {
         'bermuda': '#78dcca',
         'seaGreen': '#4ecdc4',
         'stoneBlack': '#292f36',
-        'red':'#d90429'
+        'red':'#d90429',
+        'grey': '#f1f5f9'
       },
   },
   plugins: [],

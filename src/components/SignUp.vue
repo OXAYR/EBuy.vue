@@ -27,7 +27,7 @@
     />
     <p v-if="error.length > 0" class="text-red text-sm">{{ error }}</p>
     <button
-      class="mt-4 px-44 py-2 bg-stoneBlack rounded-full"
+      class="mt-4 px-40 py-2 text-white bg-stoneBlack hover:text-seaGreen rounded-full"
       @click="toValidate(form)"
     >
       Register

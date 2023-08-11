@@ -5,7 +5,7 @@
         <p class="font-semibold text-xl text-seaGreen">EBuy</p>
       </router-link>
     </div>
-    <div class="mt-24">
+    <div id="sideBar" class="mt-24">
       <router-link
         to="/admin"
         class="mb-7 text-seaGreen block rounded-xl py-3 px-12 font-bold"

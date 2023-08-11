@@ -15,7 +15,7 @@
     />
     <p v-if="error.length" class="text-red text-sm">{{ error }}</p>
     <button
-      class="mt-4 px-28 py-2 bg-stoneBlack rounded-full"
+      class="mt-4 px-28 py-2 bg-stoneBlack text-white hover:text-seaGreen rounded-full"
       @click="checkValidation(formLogin)"
     >
       <p class="text-black font-serif text-center">Login</p>
@@ -23,9 +23,9 @@
 
     <router-link to="/signup" class="block mt-2">
       <button
-        class="Register pl-24 pr-28 py-2 bg-white hover:bg-slate-100 rounded-full"
+        class="Register pl-24 pr-28 py-2 bg-white hover:bg-seaGreen rounded-full"
       >
-        <p class="text-black font-serif ml-2">Register</p>
+        <p class="text-black font-serif ml-2">SignUp</p>
       </button>
     </router-link>
   </div>
