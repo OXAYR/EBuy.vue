@@ -20,6 +20,11 @@
     <p v-if="error.length" class="text-red text-sm text-left">
       {{ error }}
     </p>
+    <!-- <input
+      type="url"
+      v-model="todo.file"
+      class="mt-4 p-2 flex border border-gray-300 rounded-md w-full"
+    /> -->
     <textarea
       type="text"
       placeholder="Enter Description"
@@ -45,6 +50,7 @@ export default {
         // id: 0,
         title: "",
         desc: " ",
+        //file: "",
         price: 0,
       },
       error: "",

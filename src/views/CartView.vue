@@ -30,7 +30,17 @@
     >
       <p><strong>Total Bill:</strong> {{ calculateTotalBill }}</p>
     </div>
-    <p v-else>No Product to show</p>
+
+    <div v-else class="flex flex-col items-center justify-center text-center">
+      <div>
+        <img
+          src="../assets/undraw_empty_cart_co35.svg"
+          alt="empty cart"
+          class="max-w-full h-auto max-h-48 mx-auto"
+        />
+      </div>
+      <p class="font-semibold mt-2">Your Cart is Empty</p>
+    </div>
   </div>
 </template>
 

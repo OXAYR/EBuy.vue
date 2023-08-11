@@ -11,13 +11,14 @@
           <h2 class="text-lg font-semibold">{{ item.title }}</h2>
           <p class="text-gray-500 text-sm line-clamp-2">{{ item.desc }}</p>
         </div>
+        <div><img src="../assets/shopping.png" alt="productimage" /></div>
         <div class="mt-4 flex justify-between items-center">
-          <p class="text-lg font-semibold">${{ item.price }}</p>
+          <p class="text-lg font-semibold">Rs{{ item.price }}</p>
           <button
             @click="addToCart(item)"
             class="bg-stoneBlack text-white font-medium rounded p-2"
           >
-            Add to Cart
+            +
           </button>
         </div>
       </li>
