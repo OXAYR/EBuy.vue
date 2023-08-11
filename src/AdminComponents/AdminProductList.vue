@@ -1,6 +1,6 @@
 <template>
   <div class="mx-10 my-32">
-    <h1 class="font-bold text-3xl text-left">Tasks</h1>
+    <h1 class="font-bold text-3xl text-left">Products</h1>
     <ul
       v-if="items.length"
       class="p-4 mt-4 card divide-y divide-slate-300 text-left shadow-md"
@@ -14,7 +14,7 @@
         <div class="col-span-9">
           <p class="font-bold mt-4">{{ item.title }}</p>
           <p class="line-clamp-2 font-extralight">
-            <b>{{ descriptionLabel }}</b> {{ item.desc }}
+            <b>{{ description }}</b> {{ item.desc }}
           </p>
 
           <button
