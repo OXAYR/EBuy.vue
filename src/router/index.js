@@ -3,14 +3,29 @@ import HomeView from '../views/HomeView.vue'
 import LoginView from '../views/LoginView.vue'
 import SignUpView from '../views/SignUpView.vue'
 import ProductListView from '../views/PorductListView.vue'
-import CreateProductView from '../views/CreateProductView.vue'
-import EditProduct from '../components/EditProduct.vue'
+// import CreateProductView from '../views/CreateProductView.vue'
+// import EditProduct from '../components/EditProduct.vue'
 import CartView from '../views/CartView.vue'
 
 
 const routes = [
   {
     path: '/',
+    name: 'home',
+    component: HomeView,
+    children: [
+      {
+        path: '/',
+        component: ProductListView
+      },
+      {
+        path: '/cartView',
+        component: CartView
+      }
+    ]
+  },
+  {
+    path: '/login',
     name: 'login',
     component: LoginView
   },
@@ -19,29 +34,25 @@ const routes = [
     name: 'SignUp',
     component: SignUpView
   },
-  {
-    path: '/home',
-    name: 'home',
-    component: HomeView,
-    children: [
-      {
-        path: '/productlistview',
-        component: ProductListView
-      },
-      {
-        path: '/createproductview',
-        component: CreateProductView
-      },
-      {
-        path: '/edit/:id',
-        component: EditProduct,
-      },
-      {
-        path: '/cartView',
-        component: CartView
-      }
-    ]
-  },
+  // {
+  //   path: '/admin',
+  //   name: 'admin',
+  //   component: AdminView,
+  //   children: [
+  //     {
+  //       path: '/adminproductlistview',
+  //       component: AdminProductListView
+  //     },
+  //     {
+  //       path: '/createproductview',
+  //       component: CreateProductView
+  //     },
+  //     {
+  //       path: '/edit/:id',
+  //       component: EditProduct,
+  //     },
+  //   ]
+  // },
   
 ]
 

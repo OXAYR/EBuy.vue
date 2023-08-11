@@ -2,7 +2,6 @@
   <div>
     <Nav />
     <router-view class="mt-32" />
-    <Home />
   </div>
 </template>
 

@@ -1,13 +1,4 @@
 <template>
-  <router-link to="/createproductview">
-    <button class="mt-32 px-12 py-2 my-4 bg-stoneBlack rounded-full">
-      <p class="text-white font-serif text-center">Create Product</p>
-    </button>
-  </router-link>
+  <div></div>
 </template>
-
-<script>
-export default {
-  name: "Home",
-};
-</script>
+<script></script>

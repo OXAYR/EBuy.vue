@@ -1,9 +1,5 @@
 <template>
-  <ProductList
-    :items="Products"
-    @delete-task="deleteProduct"
-    @add-cart="addInCart"
-  />
+  <ProductList :items="Products" @add-cart="addInCart" />
 </template>
 
 <script>
@@ -19,10 +15,6 @@ export default {
     ...mapGetters({ Products: "getProducts" }),
   },
   methods: {
-    ...mapActions({ deleteProductAction: "deleteProduct" }),
-    deleteProduct(index) {
-      this.deleteProductAction(index);
-    },
     ...mapActions(["addToCart"]),
     addInCart(product) {
       this.addToCart({ product });
