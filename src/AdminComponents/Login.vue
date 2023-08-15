@@ -53,7 +53,7 @@ export default {
         localStorage.getItem("Email") == obj.email &&
         localStorage.getItem("Password") == obj.password
       ) {
-        router.push("/home");
+        router.push("/admin");
       } else {
         this.error.push("Incorrent Credentials");
       }

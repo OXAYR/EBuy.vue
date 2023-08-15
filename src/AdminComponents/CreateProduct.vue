@@ -8,14 +8,14 @@
           placeholder="Enter title"
           id="todo"
           v-model="prod.title"
-          class="mt-4 p-2 flex border border-gray-300 rounded-md w-full"
+          class="mt-4 p-2 flex border border-grey rounded-md w-full"
         />
         <input
           type="number"
           placeholder="$"
           id="todo"
           v-model="prod.price"
-          class="mt-4 p-2 flex border border-gray-300 rounded-md w-full"
+          class="mt-4 p-2 flex border border-grey rounded-md w-full"
         />
       </div>
       <p v-if="error.length" class="text-red text-sm text-left">
@@ -30,7 +30,7 @@
         type="text"
         placeholder="Enter Description"
         v-model="prod.desc"
-        class="mt-4 h-32 border border-gray-300 rounded-md w-full"
+        class="mt-4 h-32 border border-grey rounded-md w-full"
       />
       <button
         class="mt-4 px-12 py-2 bg-stoneBlack rounded-full"

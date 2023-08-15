@@ -2,7 +2,7 @@
   <Login />
 </template>
 <script>
-import Login from "@/components/Login.vue";
+import Login from "@/AdminComponents/Login.vue";
 export default {
   name: "LoginView",
   components: {

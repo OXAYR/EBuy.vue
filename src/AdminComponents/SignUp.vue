@@ -66,7 +66,7 @@ export default {
         localStorage.setItem("Username", obj.username);
         localStorage.setItem("Password", obj.password);
         localStorage.setItem("Email", obj.email);
-        router.push("/");
+        router.push("/login");
       }
     },
     toValidate: function (obj) {
@@ -78,9 +78,9 @@ export default {
       const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 
       if (obj.username !== "" && !usernamePattern.test(obj.username)) {
-        this.error.push("Invalid Name");
+        this.error.push("add number in the name and remove empty spaces");
       } else if (obj.password !== "" && !passwordPattern.test(obj.password)) {
-        this.error.push("Invalid Password");
+        this.error.push("Password must start with the capital letter and must contain number & special character");
       } else if (obj.password !== obj.confirmPassword) {
         this.error.push("Password Does not match");
       } else if (obj.email !== "" && !emailPattern.test(obj.email)) {
