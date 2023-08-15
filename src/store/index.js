@@ -18,7 +18,6 @@ export default createStore({
     //   }
     // },
     getCart(state){
-      console.log('in the getter------->', state.cart )
       return state.cart
     },
     getCartLength(state){
@@ -34,9 +33,7 @@ export default createStore({
       state.products.push(productNew)
     },
     SET_CART(state,product){
-      console.log("in mutation", 'data------>', product);
       state.cart.push(product)
-      console.log("in mutation cart", 'data------>', state.cart);
     },
     DELETE_PRODUCT(state, index) {
       state.products.splice(index, 1)
@@ -45,21 +42,17 @@ export default createStore({
       state.cart.splice(index, 1)
     },
     UPDATE_PRODUCT(state, { index, data }) { 
-      console.log(" in mutation ", 'index---->', index, 'data----->', data);
       state.products.splice(index, 1, data);
     },
     UPDATE_PRICE(state,{index,price}){
-      console.log(" in mutation ", 'index---->', index, 'status----->', status);
       state.products[index].price = price
     }
   },
   actions: {
     createProduct({ commit }, payload) {
-      // this.state.count++;
       commit('ADD_PRODUCT', payload)
     },
     addToCart({commit},payload){
-      console.log("in action", 'data------>', payload);
       commit('SET_CART', payload)
     },
     deleteProduct({ commit}, index) {
@@ -69,11 +62,9 @@ export default createStore({
       commit('REMOVE_PRODUCT', index)
     },
     updateProduct({ commit }, { id, data }) {
-      console.log("in action", 'id------>', id, '\n', 'data------>', data);
-      commit('UPDATE_PRODUCT', { index: id, data }); // Call the mutation with index and data
+      commit('UPDATE_PRODUCT', { index: id, data }); 
     },
     updatePrice({commit}, { id, price }){
-      console.log("in action", 'id------>', id, '\n', 'status------>', price);
       commit('UPDATE_PRICE' ,{ index: id, price })
     },
     

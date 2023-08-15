@@ -15,7 +15,9 @@ module.exports = {
         'seaGreen': '#4ecdc4',
         'stoneBlack': '#292f36',
         'red':'#d90429',
-        'grey': '#ced4da'
+        'grey': '#ced4da',
+        'yellow': '#ffb400',
+        'lightYellow' :'#fdc500'
       },
   },
   plugins: [],
