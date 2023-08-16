@@ -12,7 +12,7 @@
         <div class="flex">
           <router-link
             to="/login"
-            class="text-seaGreen shadow-sm hover:bg-dstoneBlack hover:text-white rounded p-3 ml-4"
+            class="text-seaGreen shadow-sm hover:bg-dstoneBlack hover:text-white rounded p-3 ml-4 mt-1"
           >
             Login
           </router-link>
