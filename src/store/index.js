@@ -7,7 +7,7 @@ export default createStore({
     cart:[],
     user:{},
     admin:{},
-    isAuthentication: false,
+    isAuthenticated: false,
   },
   getters: {
     getProducts(state) {

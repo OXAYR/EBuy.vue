@@ -8,6 +8,8 @@ import DashBoardView from '../AdminViews/DashBoardView.vue'
 import EditProduct from '../AdminComponents/EditProduct.vue'
 import AdminView from '../AdminViews/AdminView.vue'
 import CartView from '../views/CartView.vue'
+import UserOrAdmin from '../components/UserOrAdmin.vue'
+import store from '@/store'
 
 
 const routes = [
@@ -57,6 +59,10 @@ const routes = [
       },
     ]
   },
+  {
+    path:"/userOrAdmin",
+    component:UserOrAdmin,
+  },
   
 ]
 
@@ -64,5 +70,24 @@ const router = createRouter({
   history: createWebHashHistory(),
   routes
 })
+router.beforeEach((to, from, next) => {
+  console.log('Navigating from', from.name, 'to', to.name);
+  
+  if (to.matched.some(record => record.name === 'admin')) {
+    console.log('Admin route authentication');
+    
+    if (store.state.isAuthenticated) {
+      console.log('User is authenticated');
+      next(); 
+    } else {
+      console.log('User is not authenticated');
+      next({ name: 'login' });
+    }
+  } else {
+    console.log('no authentication needed');
+    next();
+  }
+});
+
 
 export default router

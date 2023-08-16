@@ -32,6 +32,7 @@
 </template>
 <script>
 import router from "@/router";
+import store from "@/store";
 export default {
   name: "Login",
   props: {
@@ -51,6 +52,7 @@ export default {
     toValidate(obj) {
       const storage = localStorage.getItem(`${obj.email}`);
       if (JSON.parse(storage).password == obj.password) {
+        store.state.isAuthenticated = true;
         router.push("/admin");
       } else {
         this.error.push("Incorrent Credentials");
