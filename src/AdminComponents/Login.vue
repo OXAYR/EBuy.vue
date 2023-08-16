@@ -49,10 +49,8 @@ export default {
   },
   methods: {
     toValidate(obj) {
-      if (
-        localStorage.getItem("Email") == obj.email &&
-        localStorage.getItem("Password") == obj.password
-      ) {
+      const storage = localStorage.getItem(`${obj.email}`);
+      if (JSON.parse(storage).password == obj.password) {
         router.push("/admin");
       } else {
         this.error.push("Incorrent Credentials");

@@ -22,7 +22,7 @@
     <input
       type="password"
       placeholder="Confirm Password"
-      v-model="form.confirmPassword"
+      v-model="confirmPassword"
       class="mt-4 p-2 border border-gray-300 rounded-md w-full"
     />
     <p v-if="error.length > 0" class="text-red text-sm">{{ error }}</p>
@@ -49,8 +49,8 @@ export default {
         username: "",
         email: "",
         password: "",
-        confirmPassword: "",
       },
+      confirmPassword: "",
       error: [],
     };
   },
@@ -61,11 +61,9 @@ export default {
         obj.email !== "" &&
         obj.password !== "" &&
         obj.username !== "" &&
-        obj.confirmPassword !== ""
+        this.confirmPassword !== ""
       ) {
-        localStorage.setItem("Username", obj.username);
-        localStorage.setItem("Password", obj.password);
-        localStorage.setItem("Email", obj.email);
+        localStorage.setItem(`${obj.email}`, JSON.stringify(obj));
         router.push("/login");
       }
     },
@@ -80,8 +78,10 @@ export default {
       if (obj.username !== "" && !usernamePattern.test(obj.username)) {
         this.error.push("add number in the name and remove empty spaces");
       } else if (obj.password !== "" && !passwordPattern.test(obj.password)) {
-        this.error.push("Password must start with the capital letter and must contain number & special character");
-      } else if (obj.password !== obj.confirmPassword) {
+        this.error.push(
+          "Password must start with the capital letter and must contain number & special character"
+        );
+      } else if (obj.password !== this.confirmPassword) {
         this.error.push("Password Does not match");
       } else if (obj.email !== "" && !emailPattern.test(obj.email)) {
         this.error.push("Invalid Email");

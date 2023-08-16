@@ -41,9 +41,7 @@
 export default {
   name: "ProductList",
   data() {
-    return {
-      editTask: -1,
-    };
+    return {};
   },
   props: {
     items: {},
@@ -52,6 +50,21 @@ export default {
     addToCart(item) {
       this.$emit("add-cart", item);
     },
+  },
+  created() {
+    console.log("in created");
+  },
+
+  mounted() {
+    console.log("in mount");
+  },
+
+  updated() {
+    console.log("in updated");
+  },
+
+  unmounted() {
+    console.log("in created");
   },
 };
 </script>
