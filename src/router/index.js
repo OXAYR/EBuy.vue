@@ -84,7 +84,7 @@ router.beforeEach((to, from, next) => {
       next({ name: 'login' });
     }
   } else {
-    console.log('no authentication needed');
+    console.log('no authentication');
     next();
   }
 });
