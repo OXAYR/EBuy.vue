@@ -12,9 +12,9 @@
         <div class="flex">
           <router-link
             to="/login"
-            class="text-stoneBlack shadow-sm bg-yellow hover:bg-lightYellow rounded p-3 ml-4"
+            class="text-seaGreen shadow-sm hover:bg-dstoneBlack hover:text-white rounded p-3 ml-4"
           >
-            Be An Admin
+            Login
           </router-link>
           <router-link to="/cartView" class="text-seaGreen mt-4 ml-8">
             Cart({{ counter }})
