@@ -8,6 +8,7 @@ export default createStore({
     user:{},
     admin:{},
     isAuthenticated: false,
+    role:null,
   },
   getters: {
     getProducts(state) {
@@ -24,6 +25,9 @@ export default createStore({
     },
     getAdmin(state){
       return state.user
+    },
+    getRole(state){
+      return state.role
     }
     
   },
@@ -33,6 +37,11 @@ export default createStore({
     },
     SET_ADMIN(state, admin){
       state.admin = localStorage.getItem(`${admin}`)
+    },
+    
+    SET_ROLE(state, role){
+      console.log('in the mutation role---------------->',role)
+      state.role = role
     },
     ADD_PRODUCT(state, product) {
       const productNew={
@@ -59,6 +68,10 @@ export default createStore({
     },
     createAdmin({commit}, admin){
       commit('SET_USER', admin)
+    },
+    setRole({commit},role){
+      console.log('in the action role---------------->',role)
+      commit('SET_ROLE', role)
     },
     createProduct({ commit }, payload) {
       commit('ADD_PRODUCT', payload)

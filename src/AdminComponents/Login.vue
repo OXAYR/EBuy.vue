@@ -21,7 +21,7 @@
       <p class="text-black font-serif text-center">Login</p>
     </button>
 
-    <router-link to="/signup" class="block mt-2">
+    <router-link to="/userOrAdmin" class="block mt-2">
       <button
         class="Register pl-24 pr-28 py-2 bg-white hover:bg-seaGreen rounded-full"
       >
@@ -53,7 +53,10 @@ export default {
       const storage = localStorage.getItem(`${obj.email}`);
       if (JSON.parse(storage).password == obj.password) {
         store.state.isAuthenticated = true;
-        router.push("/admin");
+        if (store.state.role === "admin") router.push("/admin");
+        else {
+          router.push("/");
+        }
       } else {
         this.error.push("Incorrent Credentials");
       }

@@ -6,8 +6,9 @@
       </p>
       <div class="flex justify-between items-center">
         <router-link
-          to="/user"
+          to="/signup"
           class="block p-4 text-stoneBlack bg-white rounded hover:bg-seaGreen transition-colors"
+          @click="setRole('user')"
         >
           <p class="font-bold">User</p>
           <p class="text-xs font-semibold text-left mt-2">
@@ -16,8 +17,9 @@
         </router-link>
         <div class="h-6 w-px bg-gray-300"></div>
         <router-link
-          to="/admin"
+          to="/signup"
           class="block p-4 text-stoneBlack bg-white rounded hover:bg-stoneBlack hover:text-white transition-colors"
+          @click="setRole('admin')"
         >
           <p class="font-bold">Admin</p>
           <p class="text-xs font-semibold text-left mt-2">
@@ -30,8 +32,17 @@
 </template>
 
 <script>
+import { mapActions } from "vuex";
 export default {
   name: "UserOrAdmin",
+  data() {
+    return {
+      role: null,
+    };
+  },
+  methods: {
+    ...mapActions({ setRole: "setRole" }),
+  },
 };
 </script>
 

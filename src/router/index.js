@@ -40,6 +40,10 @@ const routes = [
     component: SignUpView
   },
   {
+    path:"/userOrAdmin",
+    component:UserOrAdmin,
+  },
+  {
     path: '/admin',
     name: 'admin',
     component: AdminView,
@@ -59,10 +63,6 @@ const routes = [
       },
     ]
   },
-  {
-    path:"/userOrAdmin",
-    component:UserOrAdmin,
-  },
   
 ]
 
@@ -72,19 +72,41 @@ const router = createRouter({
 })
 router.beforeEach((to, from, next) => {
   console.log('Navigating from', from.name, 'to', to.name);
-  
-  if (to.matched.some(record => record.name === 'admin')) {
-    console.log('Admin route authentication');
-    
-    if (store.state.isAuthenticated) {
-      console.log('User is authenticated');
-      next(); 
-    } else {
-      console.log('User is not authenticated');
-      next({ name: 'login' });
+ if(store.state.role === 'user'){
+    if (to.matched.some(record => record.name === 'home')) {
+      console.log('Admin route authentication');
+      
+      if (store.state.isAuthenticated) {
+        console.log('User is authenticated');
+        next(); 
+      } else {
+        console.log('User is not authenticated');
+        next({ name: 'login' });
+      }
     }
-  } else {
-    console.log('no authentication');
+    else{
+      next()
+    }
+  }
+  
+  else if(store.state.role === 'admin'){ 
+    if (to.matched.some(record => record.name === 'admin')) {
+      console.log('Admin route authentication');
+      
+      if (store.state.isAuthenticated) {
+        console.log('User is authenticated');
+        next(); 
+      } else {
+        console.log('User is not authenticated');
+        next({ name: 'login' });
+      }
+    } 
+    else{
+      next()
+    }
+    
+  }
+  else{
     next();
   }
 });
